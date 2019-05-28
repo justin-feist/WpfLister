@@ -13,8 +13,12 @@ namespace WpfLister.ViewModels
 
         public MainWindowViewModel()
         {
+            //Wire up the "Load Data" button
             GetDataCommand = new RelayCommand(GetData);
+
+            //We'll use a text file for our list of reasons
             _listFacade = new ListFacade(new TextListRepository());
+
             ListItems = new List<ListItemDto>();
         }
 
@@ -26,12 +30,15 @@ namespace WpfLister.ViewModels
             set
             {
                 _listItems = value;
+
+                //Let the UI know the backing list of items changed
                 RaisePropertyChanged("ListItems");
             }
         }
 
         private async void GetData(object parameter)
         {
+            //Fetch the items
             ListItems = await _listFacade.GetListItems();
         }
 

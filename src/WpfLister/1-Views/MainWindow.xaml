@@ -13,9 +13,10 @@
     <Grid>
         <Button Content="Load Data" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top"
                 Command="{Binding Path=GetDataCommand}"></Button>
-        <Border BorderThickness="2px" BorderBrush="Black" CornerRadius="10"  HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Bottom">
-            <ListView ItemsSource="{Binding ListItems}">
-            </ListView>
+        <Border BorderThickness="2px" BorderBrush="Black" CornerRadius="10"
+                HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Bottom"
+                Padding="5,5,5,5">
+            <ListView ItemsSource="{Binding ListItems}" BorderThickness="0" BorderBrush="Transparent" />
         </Border>
 
     </Grid>

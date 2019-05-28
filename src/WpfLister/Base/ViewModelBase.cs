@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace WpfLister.Base
 {
+    //We'll inherit our ViewModels from this class to help us let the UI know
+    //when its bound data has changed (via the INotifyPropertyChanged interface)
     public abstract class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

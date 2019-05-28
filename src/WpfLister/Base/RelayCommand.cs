@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace WpfLister.Base
 {
+    //This class will help relay commands from the UI to the View Model
     public class RelayCommand : ICommand
     {
         private Action<object> _action;
