@@ -12,11 +12,13 @@
     </Window.DataContext>
     <Grid>
         <Button Content="Load Data" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top"
-                Command="{Binding Path=GetDataCommand}"></Button>
+                Command="{Binding Path=GetDataCommand}" FontFamily="Segoe UI Semibold" FontSize="20">
+        </Button>
         <Border BorderThickness="2px" BorderBrush="Black" CornerRadius="10"
                 HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Bottom"
                 Padding="5,5,5,5">
-            <ListView ItemsSource="{Binding ListItems}" BorderThickness="0" BorderBrush="Transparent" />
+            <ListView ItemsSource="{Binding ListItems}" BorderThickness="0" BorderBrush="Transparent"
+                      FontFamily="Segoe UI Semibold" FontSize="14"/>
         </Border>
 
     </Grid>
