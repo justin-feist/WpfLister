@@ -10,9 +10,33 @@
     <Window.DataContext>
         <viewModels:MainWindowViewModel />
     </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="PrimaryLargeButton" TargetType="Button">
+            <Setter Property="Background" Value="CornflowerBlue" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Height" Value="152" />
+            <Setter Property="Width" Value="420" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid x:Name="Grid">
+                            <Border x:Name="ButtonBorder" CornerRadius="8" Background="{TemplateBinding Background}">
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="30" Opacity="0.35"></DropShadowEffect>
+                                </Border.Effect>
+                            </Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
     <Grid>
         <Button Content="Load Data" Height="30" HorizontalAlignment="Stretch" VerticalAlignment="Top"
-                Command="{Binding Path=GetDataCommand}" FontFamily="Segoe UI Semibold" FontSize="20">
+                Command="{Binding Path=GetDataCommand}" FontFamily="Segoe UI Semibold" FontSize="20"
+                Style="{StaticResource PrimaryLargeButton}">
         </Button>
         <Border BorderThickness="2px" BorderBrush="Black" CornerRadius="10"
                 HorizontalAlignment="Stretch" Height="300" VerticalAlignment="Bottom"
