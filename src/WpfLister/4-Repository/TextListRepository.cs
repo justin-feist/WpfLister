@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 using WpfLister.Models;
 
 namespace WpfLister.Repository
@@ -45,7 +46,10 @@ namespace WpfLister.Repository
                 counter++;
             }
 
-            return listItems;
+            var rng = new Random();
+            var returnList = listItems.OrderBy(item => rng.Next());
+
+            return returnList;
         }
     }
 }
